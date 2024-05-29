@@ -16,6 +16,11 @@ public class MarkdownTemplate {
     }
 
     public String create() throws MessageBuildException {
-        return new MessageTemplate(messageData).of("markdown.ftl");
+        return create("markdown.ftl");
     }
+
+    public String create(String templateFileName) throws MessageBuildException {
+        return new MessageTemplate(messageData).of(templateFileName);
+    }
+
 }

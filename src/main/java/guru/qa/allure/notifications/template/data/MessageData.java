@@ -22,12 +22,14 @@ public class MessageData {
     private final SummaryData summaryData;
     private final PhrasesData phrasesData;
     private Map<String, Object> data;
+    private final Map<String, Object> additionalData;
 
     public MessageData(Base base, Summary summary, Phrases phrases) {
         this.project = base.getProject();
         this.buildData = new BuildData(base);
         this.summaryData = new SummaryData(base, summary);
         this.phrasesData = new PhrasesData(phrases);
+        this.additionalData = new HashMap<>();
     }
 
     public Map<String, Object> getValues() {
@@ -37,6 +39,7 @@ public class MessageData {
             data.putAll(buildData.map());
             data.putAll(summaryData.map());
             data.putAll(phrasesData.map());
+            data.putAll(additionalData);
             log.info("Template data: {}", data);
         }
         return data;

@@ -3,6 +3,7 @@ package guru.qa.allure.notifications.config;
 import com.google.gson.annotations.SerializedName;
 import guru.qa.allure.notifications.config.base.Base;
 import guru.qa.allure.notifications.config.discord.Discord;
+import guru.qa.allure.notifications.config.gitlab.Note;
 import guru.qa.allure.notifications.config.loop.Loop;
 import guru.qa.allure.notifications.config.mail.Mail;
 import guru.qa.allure.notifications.config.mattermost.Mattermost;
@@ -40,4 +41,6 @@ public class Config {
     private RocketChat rocketChat;
     @SerializedName("proxy")
     private Proxy proxy;
+    @SerializedName("gitlabNote")
+    private Note gitlabNote;
 }
